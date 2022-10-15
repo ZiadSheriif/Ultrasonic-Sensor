@@ -19,17 +19,24 @@ int main(void)
 	Ultrasonic_init();
 	LCD_clearScreen();
 	LCD_displayString("Distance=");
-	_delay_ms(2000);
 	uint16 targetDistance = 0;
 	while (1)
 	{
+		targetDistance = Ultrasonic_readDistance();
 		LCD_moveCursor(0, 0);
 		LCD_displayString("Distance=");
 		LCD_moveCursor(0, 10);
-		targetDistance = Ultrasonic_readDistance();
-		LCD_intgerToString(targetDistance);
+		if (targetDistance >= 100)
+		{
+			LCD_intgerToString(targetDistance);
+		}
+		else
+		{
+			LCD_intgerToString(targetDistance);
+			/* In case the digital value is two or one digits print space in the next digit place */
+			LCD_displayCharacter(' ');
+		}
 		LCD_moveCursor(0, 13);
 		LCD_displayString("cm");
-		_delay_ms(10);
 	}
 }
