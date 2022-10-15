@@ -16,8 +16,8 @@ uint8 edgeCount = 0;     // counter to count calling call back function
 void Ultrasonic_init(void)
 {
     Icu_ConfigType configType;
-    configType.clock = RISING;
-    configType.edge = F_CPU_8;
+    configType.edge = RISING;
+    configType.clock = F_CPU_8;
     Icu_init(&configType);
     Icu_setCallBack(Ultrasonic_edgeProcessing);
     GPIO_setupPinDirection(PORTB_ID, PIN5_ID, PIN_OUTPUT);
@@ -25,12 +25,14 @@ void Ultrasonic_init(void)
 void Ultrasonic_Trigger(void)
 {
     GPIO_writePin(PORTB_ID, PIN5_ID, LOGIC_HIGH);
-    delay_us(10);
+    _delay_us(10);
     GPIO_writePin(PORTB_ID, PIN5_ID, LOGIC_LOW);
 }
 uint16 Ultrasonic_readDistance(void)
 {
-    Ultrasonic_Trigger(); /* Calling trigger function*/
+    
+   
+     Ultrasonic_Trigger(); /* Calling trigger function*/
 
     /*17000 x (TIMER value) x 1 x 10^-6 cm
      = 0.017 x (TIMER value) cm
@@ -51,5 +53,4 @@ void Ultrasonic_edgeProcessing(void)
         Icu_setEdgeDetectionType(RISING);
         edgeCount=0;
     }
-
 }
