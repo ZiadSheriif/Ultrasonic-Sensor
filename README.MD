@@ -12,7 +12,7 @@ Embedded System Application Based on C.
 2. ULTRASONIC
 3. ICU
 4. LCD
-5. Microcontroller: ATMega16
+5. Microcontroller: ATMega32
 
 ## Getting Started
 
@@ -59,4 +59,4 @@ run ultrasonic.pdsprj
 ## License <a name="license"></a>
 
 > This software is licensed under MIT License,
-> See [License]() for more information ©ZiadSheriif.
+> See [License](https://github.com/ZiadSheriif/Ultrasonic-Sensor/blob/master/license) for more information ©ZiadSheriif.
