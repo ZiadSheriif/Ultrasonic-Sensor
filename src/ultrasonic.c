@@ -38,7 +38,7 @@ uint16 Ultrasonic_readDistance(void)
      = 0.017 x (TIMER value) cm
     = (TIMER value) / 58.8 cm
     */
-   return ((uint16)((float)highEdgeTime)/(58.8));
+   return ((uint16)((float)highEdgeTime)/(57.5));
 }
 void Ultrasonic_edgeProcessing(void)
 {
