@@ -1,10 +1,10 @@
-# Temperature Controlled Fan
+# Ultrasonic Sensor
 
 Embedded System Application Based on C.
 
 ## Description
 
- Embedded System Application in which measuring the distance between ultrasonic and an obstacle.
+ Embedded System Application in which measuring the distance using ultrasonic sensor.
 
  ***Features***
 
